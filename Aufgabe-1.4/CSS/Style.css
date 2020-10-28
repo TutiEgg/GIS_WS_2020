@@ -47,7 +47,11 @@ body {
 }
 
 
-.gridheader { grid-area: header; }
+.gridheader { 
+  grid-area: header;
+  color:white;
+  font-family: Comic Sans MS, Comic Sans, cursive;
+ }
 .gridleft { grid-area: left; }
 .gridmain { grid-area: main; }
 .gridfooter { grid-area: footer; }
@@ -59,11 +63,12 @@ body {
     'left left main main main main'
     'footer footer footer footer footer footer';
   grid-gap: 10px;
-  background-color: #2196F3;
+  background-color: blue;
   padding: 10px;
 }
 
 .grid-container > div {
+  background: url("../Images/space.jpg");
   background-color: rgba(255, 255, 255, 0.8);
   text-align: center;
   padding: 20px 0;
