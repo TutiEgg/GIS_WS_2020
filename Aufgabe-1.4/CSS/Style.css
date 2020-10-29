@@ -120,6 +120,10 @@ h1 {
 	text-align: center;
 }
 
+h1 + p{
+	font-weight: bold 
+}
+
 .head{
 	color: white;
 	transition: all 2s ease-in-out 0s;
@@ -227,7 +231,7 @@ ul.icons {
 }
 
 
-.start .rechts{
+.rechts{
 	width: 50%;
 	height: 50%;
 	text-align: right;
@@ -275,7 +279,7 @@ ul.icons {
 	border-radius: 5px 5px 5px 5px;
 }
 .naviLi:hover:not(.active) {
-	background-color: #111;
+	background-color: #00ff00;
 }
 
 .active {
