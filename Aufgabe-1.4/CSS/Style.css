@@ -10,6 +10,32 @@ body {
 		word-break: break-word;
 		grid-gap: 0px;
 }
+.text{
+	font-size: 30px;
+	color: white;
+	word-wrap: break-word;
+
+}
+.head{
+	color: white;
+	transition: all 2s ease-in-out 0s;
+	position: relative;
+	top:0;
+}
+.head:hover{
+	transition: sine 0s;
+	color:yellow;
+	top:10px;
+}
+h1 {
+	font-size: 50px;
+	font-family: Comic Sans MS, Comic Sans, cursive;
+	text-align: center;
+}
+
+p {
+	font-family: Comic Sans MS, Comic Sans, cursive;
+}
 	
 @media only screen and (max-width: 1024px) and (min-width: 600px) {
 
@@ -24,6 +50,9 @@ body {
 	}
 	.text{
 		font-size: 20px;
+	}
+	h1 {
+		font-size: 30px;
 	}
 }	
 	
@@ -42,6 +71,9 @@ body {
 	
 	.text{
 		font-size: 10px;
+	}
+	h1 {
+		font-size: 20px;
 	}
 
 }
@@ -114,31 +146,12 @@ select {
   margin-right: 5%;
 }
 
-h1 {
-	font-size: 50px;
-	font-family: Comic Sans MS, Comic Sans, cursive;
-	text-align: center;
-}
+
 
 h1 + p{
 	font-weight: bold 
 }
 
-.head{
-	color: white;
-	transition: all 2s ease-in-out 0s;
-	position: relative;
-	top:0;
-}
-.head:hover{
-	transition: sine 0s;
-	color:yellow;
-	top:10px;
-}
-
-p {
-	font-family: Comic Sans MS, Comic Sans, cursive;
-}
 
 .video{
 	position: float;
@@ -147,12 +160,6 @@ p {
 	margin: 20px;
 }
 
-.text{
-	font-size: 30px;
-	color: white;
-	word-wrap: break-word;
-
-}
 
 .info{
 	width: 80%;
