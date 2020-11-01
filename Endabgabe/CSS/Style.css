@@ -202,6 +202,10 @@ h1 + p{
 	font-family: Comic Sans MS, Comic Sans, cursive;
 }
 
+.center{
+	text-align: center;
+}
+
 ul.navi {
 	float: right;
 	list-style-type: none;
