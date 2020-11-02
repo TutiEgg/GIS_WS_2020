@@ -1,0 +1,2 @@
+"The element details must not appear as a descendant of the a element." - Diesen Fehler konnte ich nicht beheben auch bei anderen Elementen
+"Start tag a seen but an element of the same type was already open." - Bei jedem a-tag mit reference vorhanden 
