@@ -40,6 +40,32 @@ h1 {
 p {
 	font-family: Comic Sans MS, Comic Sans, cursive;
 }
+
+.naviLi {
+	background-color: #333;
+	display: inline;
+	float: left;
+	color: white;
+	text-align: center;
+	padding: 1% 2%;
+	margin-left: 3px;
+	text-decoration: none;
+	border-radius: 5px 5px 5px 5px;
+}
+.naviLi:hover:not(.active) {
+	background-color: #00ff00;
+}
+ul.navi {
+	float: right;
+	list-style-type: none;
+	padding: 0;
+	
+	overflow: hidden;
+	position: fixed;
+	top: 0;
+	left: 70%;
+	width: 30%;
+}
 	
 @media only screen and (max-width: 1024px) and (min-width: 600px) {
 
@@ -57,6 +83,13 @@ p {
 	}
 	h1 {
 		font-size: 30px;
+	}
+	.naviLi{
+		padding: 3% 4%;
+	}
+	ul.navi{
+		left: 50%;
+		width: 50%;
 	}
 }	
 	
@@ -78,6 +111,13 @@ p {
 	}
 	h1 {
 		font-size: 20px;
+	}
+	.naviLi{
+		padding: 5% 7%;
+	}
+	ul.navi{
+		left: 30%;
+		width: 70%;
 	}
 
 }
@@ -210,17 +250,7 @@ h1 + p{
 	text-align: center;
 }
 
-ul.navi {
-	float: right;
-	list-style-type: none;
-	padding: 0;
-	
-	overflow: hidden;
-	position: fixed;
-	top: 0;
-	left: 70%;
-	width: 30%;
-}
+
 
 ul.icons {
 	display: inline;
@@ -282,20 +312,7 @@ ul.icons {
 	padding: 50px; 
 }
 
-.naviLi {
-	background-color: #333;
-	display: inline;
-	float: left;
-	color: white;
-	text-align: center;
-	padding: 1% 2%;
-	margin-left: 3px;
-	text-decoration: none;
-	border-radius: 5px 5px 5px 5px;
-}
-.naviLi:hover:not(.active) {
-	background-color: #00ff00;
-}
+
 
 .active {
 	background-color: #4CAF50;
