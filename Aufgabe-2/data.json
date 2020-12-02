@@ -1,0 +1,19 @@
+{
+
+    "kopfform": ["drei","vier","rund"],
+    "kopffarbe": ["blue", "yellow", "red", "green"],
+    "kopfkugel": ["blue", "yellow", "red", "green"],
+
+    "bodyform": ["drei","vier","rund"],
+    "bodyfarbe": ["blue", "yellow", "red", "green"],
+    "bodyfenster": ["blue", "yellow", "red", "green"],
+
+    "footform": ["drei","vier","rund"],
+    "footfarbe": ["blue", "yellow", "red", "green"],
+    "footfeuer": ["blue", "yellow", "red", "green"],
+
+    "bezeichnung": ["", "Kopffarbe", "Kopfkugel", "", "Bodyfarbe", "Bodyfenster", "", "Footfarbe", "Footfeuer"]
+
+
+    
+}
