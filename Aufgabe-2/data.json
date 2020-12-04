@@ -1,6 +1,6 @@
 {
 
-    "kopfform": ["drei","vier","rund"],
+    "kopfform": [ "drei","vier","rund"],
     "kopffarbe": ["blue", "yellow", "red", "green"],
     "kopfkugel": ["blue", "yellow", "red", "green"],
 

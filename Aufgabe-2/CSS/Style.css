@@ -66,6 +66,9 @@ p {
   box-shadow: 10px 15px #131132;
 }
 
+
+
+
 .grid-container > div {
   background: url("../Images/space.jpg");
   background-color: rgba(255, 255, 255, 0.8);
@@ -84,6 +87,27 @@ p {
   margin-top: 10%;
   margin-bottom: 10%;
   box-shadow: 10px 15px #131132;
+}	
+
+.erfolg {
+  color: green;
+}	
+
+.server {
+  text-align: center;
+  font-size: 30px;
+  background: url("../Images/space.jpg");
+  box-shadow: 10px 15px #131132;
+  border-radius: 20px 20px 20px 20px;
+  padding: 10px 10px;
+  width: 60%;
+  margin-left: 20%;
+
+  
+}	
+
+.error {
+  color: red;
 }	
 
 .ausgabeEnd {
