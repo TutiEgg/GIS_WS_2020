@@ -121,7 +121,7 @@ var main;
             // Daten übergabe
             auswahlEinlesen();
             console.log(" Auswahl insgesamt betätigt: " + _auswahl[0] + _auswahl[1] + _auswahl[2] + _auswahl[3] + _auswahl[4] + _auswahl[5] + _auswahl[6] + _auswahl[7] + _auswahl[8] + _datenArr[0].length);
-            serverAnfrage("http://gis-communication.herokuapp.com");
+            serverAnfrage("https://gis-communication.herokuapp.com");
             zeichnenRakete();
         }
     }
