@@ -1,0 +1,21 @@
+{
+  "name": "lucamoserpack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "start": "node Aufgabe-3/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TutiEgg/GIS_WS_2020.git"
+  },
+  "author": "luca moser",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TutiEgg/GIS_WS_2020/issues"
+  },
+  "homepage": "https://github.com/TutiEgg/GIS_WS_2020#readme"
+}
