@@ -12,7 +12,7 @@ await mongoClient.connect();
 var Aufgabe_3;
 (function (Aufgabe_3) {
     //let _serverUrl: string = "http://127.0.0.1:8100";
-    let _serverUrl = "http://lucamosergis2020.herokuapp.com/";
+    let _serverUrl = "https://lucamosergis2020.herokuapp.com/";
     let listVorhanden = false;
     function main() {
         let buttonList = document.getElementById("listButton");
