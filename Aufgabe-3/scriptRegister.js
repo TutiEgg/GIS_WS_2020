@@ -70,16 +70,21 @@ var Aufgabe_3;
         text.id = "textRegister";
         if (email != undefined && email != null && email != "") {
             if (password != undefined && password != null && password != "") {
-                let daten = await serverAnfrage(_serverUrl); // await dazu vielleicht
-                for (let i = 0; i < daten.length; i++) {
-                    let emailString = "\"" + email + "\"";
-                    //let emailString: string = email;
-                    console.log(JSON.stringify(daten[i].email).toString() + " == " + emailString); // "mmlpv.mossder@gmx.de" == mmlpv.mossder@gmx.de !!!FALSCH rumtesten
-                    if (JSON.stringify(daten[i].email) == emailString) { // benutzerArr[i].email.toStkring() kann undefined sein ... muss gelöst werden durch vollständige Formular ausfüllung
-                        console.log("jaaa ist gleich" + i);
-                        datenSenden = false;
-                        break;
+                try {
+                    let daten = await serverAnfrage(_serverUrl); // await dazu vielleicht
+                    for (let i = 0; i < daten.length; i++) {
+                        let emailString = "\"" + email + "\"";
+                        //let emailString: string = email;
+                        console.log(JSON.stringify(daten[i].email).toString() + " == " + emailString); // "mmlpv.mossder@gmx.de" == mmlpv.mossder@gmx.de !!!FALSCH rumtesten
+                        if (JSON.stringify(daten[i].email) == emailString) { // benutzerArr[i].email.toStkring() kann undefined sein ... muss gelöst werden durch vollständige Formular ausfüllung
+                            console.log("jaaa ist gleich" + i);
+                            datenSenden = false;
+                            break;
+                        }
                     }
+                }
+                catch (e) {
+                    //
                 }
                 if (datenSenden) {
                     console.log("wird eingetragen");

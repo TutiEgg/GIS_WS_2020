@@ -92,21 +92,26 @@ namespace Aufgabe_3 {
     
         if (email != undefined && email != null && email != "") {
             if (password != undefined && password != null && password != "") {
-
-                let daten: Daten[] = await serverAnfrage(_serverUrl); // await dazu vielleicht
-                for (let i: number = 0; i < daten.length; i++) {
-                    let emailString: string = "\"" + email + "\"";
-                    //let emailString: string = email;
-                    console.log(JSON.stringify(daten[i].email).toString() + " == " + emailString); // "mmlpv.mossder@gmx.de" == mmlpv.mossder@gmx.de !!!FALSCH rumtesten
-                    if (JSON.stringify(daten[i].email) == emailString) { // benutzerArr[i].email.toStkring() kann undefined sein ... muss gelöst werden durch vollständige Formular ausfüllung
-                                        
-                        console.log("jaaa ist gleich" + i);
-                        datenSenden = false;
-                        break;
+                try {
+                    let daten: Daten[] = await serverAnfrage(_serverUrl); // await dazu vielleicht
+                    for (let i: number = 0; i < daten.length; i++) {
+                        let emailString: string = "\"" + email + "\"";
+                        //let emailString: string = email;
+                        console.log(JSON.stringify(daten[i].email).toString() + " == " + emailString); // "mmlpv.mossder@gmx.de" == mmlpv.mossder@gmx.de !!!FALSCH rumtesten
+                        if (JSON.stringify(daten[i].email) == emailString) { // benutzerArr[i].email.toStkring() kann undefined sein ... muss gelöst werden durch vollständige Formular ausfüllung
+                                            
+                            console.log("jaaa ist gleich" + i);
+                            datenSenden = false;
+                            break;
+                        }
+                                    
+                                    
                     }
-                                
-                                
+                } catch ( e ) {
+                    //
                 }
+                
+                
                 if (datenSenden) {
                     console.log("wird eingetragen");
                     text.className = "textRichtig"; // Textformat klasse
