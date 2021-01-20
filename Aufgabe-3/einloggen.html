@@ -1,0 +1,81 @@
+<!DOCTYPE	html>	
+<html lang="de">
+<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="CSS/Style.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<script src="scriptLogin.js" defer></script>
+		<title>Meine Kontaktdaten</title>
+</head>
+<body>
+<div class="screen">
+<a id="anfang">
+<!-- Header der auf jeder Seite geich ist -->
+	<div class="top start">
+		<h1 class="head">Einloggen</h1>
+		<div class="rechts">
+			<p class="text">Auf dieser Seite kann man sich mit seiner Email und seinem Passwort einloggen/p>
+		</div>
+	</div>
+	
+	<div class="top start2">
+		<ul class="icons center">
+			<!-- Ich möchte ungern meine soziale Medien hier verlinken -->
+			<li class="naviIcons"><i class="material-icons" style="font-size:24px;color:white">cloud</i></li>
+			<li class="naviIcons"><i class="fa fa-instagram" style="font-size:24px;color:white"></i></li>
+			<li class="naviIcons"><a href="https://www.youtube.com/channel/UCwdnijymL0nMRembCerxJXw"><i class="fa fa-youtube-play" style="font-size:24px;color:white"></i></a></li>
+		</ul>
+	</div>
+	
+  <!--
+	<form action="http://127.0.0.1:8100/index.html" methode="post">
+		<label for="fname">First name:</label><br>
+		<input type="text" id="fname" name="fname" value="John"><br>
+		<label for="lname">Last nae:</label><br>
+		<input type="text" id="lname" name="lname" value="Doe"><br><br>
+		<input type="submit" value="Submit">
+	</form> 
+	-->
+	<h1>Einloggen</h1>
+	
+	
+	<br>
+	<br>	
+
+	<p></p>
+	<p></p>
+
+	<form action="http://127.0.0.1:8100" method="get"> <!--Weg machen-->
+		<div class="grid-container">
+			<div class="gridheader">Einlogformular</div>
+			
+			<div class="gridmain">
+				<input name="email" type="text" placeholder="Email" id="loginEmail">
+				<input name="password" type="text" placeholder="Passwort" id="loginPassword"><br>
+				
+				<div id="messageLogin">
+
+                </div>
+				<p id="message" style="color:red; font-size:16px"><em></em></p> <!--Falls das Passwort falsche sein sollte oder die Email noch nicht in der Datenbank ist -> Rote Warnung anzeigen   Kann weg gemacht werden-->
+			</div> 
+			<div class="gridleft">
+				<button class="favorite styled" type="button" onclick="window.location.href = 'index.html';"> <!--In typescript ändern anstatt inline-->
+					Registrieren
+                </button>
+                <button class="favorite styled" type="button" onclick="window.location.href = 'list.html';"> <!--In typescript ändern anstatt inline-->
+					Liste
+				</button>
+			</div> 
+		
+			<div class="gridfooter">
+				<input type="button" id="loginButton" value="Absenden">
+			</div>
+		</div>
+	</form>
+	
+	
+</div>	
+</body>
+</html>
+

@@ -1,18 +1,20 @@
 {
-  "name": "lucamoserpack",
+  "name": "servergis",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "mongodb": "^3.6.3"
+  },
   "devDependencies": {},
   "scripts": {
-    "start": "node Aufgabe-3/index.js"
+    "start": "node Aufgabe-3/server.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/TutiEgg/GIS_WS_2020.git"
   },
-  "author": "luca moser",
+  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/TutiEgg/GIS_WS_2020/issues"

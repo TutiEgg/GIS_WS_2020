@@ -1,0 +1,323 @@
+body {
+	/*background-color: lightblue;*/
+	background-image: url("../Images/bg.png");
+	
+}
+
+.screen{
+		max-width: 800px;
+		margin: auto;
+		word-break: break-word;
+		grid-gap: 0px;
+}
+.text{
+	font-size: 30px;
+	color: white;
+	word-wrap: break-word;
+
+}
+.head{
+	color: white;
+	transition: all 2s ease-in-out 0s;
+	position: relative;
+	top:0;
+}
+.head:hover{
+	transition: sine 0s;
+	color:yellow;
+	top:10px;
+}
+h1 {
+	font-size: 50px;
+	font-family: Comic Sans MS, Comic Sans, cursive;
+	text-align: center;
+}
+
+p {
+	font-family: Comic Sans MS, Comic Sans, cursive;
+}
+	
+@media only screen and (max-width: 1024px) and (min-width: 600px) {
+
+	.screen{
+		max-width: 600px;
+		margin: auto;
+		word-break: break-word;
+		display: grid;
+	}
+	.head{
+		font-size: 40px;
+	}
+	.text{
+		font-size: 20px;
+	}
+	h1 {
+		font-size: 30px;
+	}
+}	
+	
+@media only screen and (max-width: 600px) {
+
+	.screen{
+		max-width: 400px;
+		margin: auto;
+		word-break: break-word;
+		display: grid;
+	}
+	
+	.head{
+		font-size: 30px;
+	}
+	
+	.text{
+		font-size: 10px;
+	}
+	h1 {
+		font-size: 20px;
+	}
+
+}
+
+.textRichtig{
+	text-align: center;
+	color:#00ff00;
+	font-family: Comic Sans MS, Comic Sans, cursive;
+}
+
+.textFalsch{
+	text-align: center;
+	color:crimson;
+	font-family: Comic Sans MS, Comic Sans, cursive;
+}
+
+.liste{
+	font-size: 20px;
+	color: white;
+	font-family: Comic Sans MS, Comic Sans, cursive;
+}
+
+.gridheader { 
+  grid-area: header;
+  color:white;
+  font-family: Comic Sans MS, Comic Sans, cursive;
+ }
+.gridleft { grid-area: left; }
+.gridmain { grid-area: main; }
+.gridfooter { grid-area: footer; }
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'header header header header header header'
+	'main main main main main main'
+    'footer footer footer footer footer left';
+  grid-gap: 10px;
+  background-color: blue;
+  padding: 10px;
+}
+
+.grid-container > div {
+  background: url("../Images/space.jpg");
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+
+input[type=text]{
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  padding: 12px 20px 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 40%;
+  background-color: blue;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  margin-left: 30%;
+  margin-right: 30%;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+select {
+  width: 90%;
+  padding: 16px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #f1f1f1;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+
+
+h1 + p{
+	font-weight: bold 
+}
+
+
+.video{
+	position: float;
+	border: 30px solid #ECECEC;
+	box-sizing: border-box;
+	margin: 20px;
+}
+
+
+.info{
+	width: 80%;
+	background-image: linear-gradient(to bottom right, black, #2FD1D4);
+	color: white;
+	padding:10px;
+	border: 5px solid purple;
+	margin: auto;
+}
+
+.anfang{
+	padding: 10px 24px;
+	background-color: blue;
+	color: white;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 30px 30px;
+	font-family: Comic Sans MS, Comic Sans, cursive;
+}
+
+.icon{
+	color: white;
+}
+
+#imgpb{
+	border-radius: 50px 15px 50px 15px ;
+	border: 10px solid black;
+}
+
+#gifborder{
+	border-radius: 50px 50px 50px 50px ;
+	border: 15px solid red;
+}
+
+#textcenter{
+	text-align: center;
+	font-size: 30px;
+	font-family: Comic Sans MS, Comic Sans, cursive;
+}
+
+.center{
+	text-align: center;
+}
+
+ul.navi {
+	float: right;
+	list-style-type: none;
+	padding: 0;
+	
+	overflow: hidden;
+	position: fixed;
+	top: 0;
+	left: 70%;
+	width: 30%;
+}
+
+ul.icons {
+	display: inline;
+	list-style-type: none;
+	padding: 0;
+	overflow: hidden;
+	width: 50%;
+}
+.naviIcons{
+	display: inline;
+	text-align: center;
+	padding: 1% 2%;
+	margin-left: 3%;
+	text-decoration: none;
+}
+.fa:hover {
+	transform: scale(1.5);
+	opacity: .5;
+}
+.material-icons:hover{
+	transform: scale(1.5);
+	opacity: .5;
+}
+
+
+.rechts{
+	width: 50%;
+	height: 50%;
+	text-align: right;
+	box-decoration-break: clone;
+	position: relative;
+	margin-left: 50%;
+}
+
+
+.start {
+	
+	margin: auto;
+	word-break: break-all;
+	margin: auto;
+	text-align: center;
+	border-radius: 20px 20px 150px 150px;
+	background: url("../Images/space.jpg");
+	max-width: 800px;
+	padding: 50px; 
+	overflow: hidden;
+}
+.start2 {
+	margin: auto;
+	word-break: break-all;
+	margin: auto;
+	text-align: center;
+	color: white;
+	border-radius: 0px 0px 200px 200px;
+	background: url("../Images/space.jpg");
+	max-width: 400px;
+	margin-left:150px;
+	margin-right:150px;
+	padding: 50px; 
+}
+
+.naviLi {
+	background-color: #333;
+	display: inline;
+	float: left;
+	color: white;
+	text-align: center;
+	padding: 1% 2%;
+	margin-left: 3px;
+	text-decoration: none;
+	border-radius: 5px 5px 5px 5px;
+}
+.naviLi:hover:not(.active) {
+	background-color: #00ff00;
+}
+
+.active {
+	background-color: #4CAF50;
+	color: yellow;
+}
+
+
+
+
+
+
+
