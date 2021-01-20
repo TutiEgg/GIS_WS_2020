@@ -19,7 +19,7 @@ var Aufgabe_3;
         port = 8100; // Falls kein Port angegeben ist 8100 benutzen    5500       
     }
     //let databaseUrl: string = "mongodb://localhost:27017";
-    let databaseUrl = "mongodb+srv://Testuser:<password>@luca.bhhsd.mongodb.net/<dbname>?retryWrites=true&w=majority";
+    let databaseUrl = "mongodb+srv://Testuser:test@luca.bhhsd.mongodb.net/datenbank?retryWrites=true&w=majority";
     startServer(port);
     // Verbinden
     connectToDatabase(databaseUrl);
@@ -58,16 +58,22 @@ var Aufgabe_3;
                 //_response.write("Datensätze wurden eingetragen");
                 _response.end("Datensätze wurden eingetragen");
             }
-            else if (Object.keys(url.query).length == 2) {
+            else if (Object.keys(url.query).length == 2 || Object.keys(url.query).length == 1) {
                 //let benutzerArr: Daten[] = await retrieveDaten();
                 let benutzerString = await retrieveDaten();
                 //_response.write(benutzerArr);
                 _response.end(benutzerString);
             }
             else {
-                let benutzerString = await retrieveDaten();
-                //_response.write(benutzerArr);
-                _response.end(benutzerString);
+                try {
+                    //let benutzerArr: Daten[] = await retrieveDaten();
+                    let benutzerString = await retrieveDaten();
+                    //_response.write(benutzerArr);
+                    _response.end(benutzerString);
+                }
+                catch (e) {
+                    // 
+                }
             }
             // Zum Anzeigen auf der htmlseite
             /*
