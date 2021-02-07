@@ -7,8 +7,8 @@ namespace register {
         msg: string;
     }
 
-    let serverUrl: string = "https://lucamosergis2020.herokuapp.com/";
-    //let serverUrl: string = "http://127.0.0.1:8100";
+    //let serverUrl: string = "https://lucamosergis2020.herokuapp.com/";
+    let serverUrl: string = "http://127.0.0.1:8100";
     let username: string = "Fehler";
 
     function main(): void {
@@ -53,9 +53,7 @@ namespace register {
         deleteElements(divParent);
         let getDatenUser: List = {site: "getDatenProfil", username: sessionStorage.getItem("profilname")};
         console.log(sessionStorage.getItem("profilname"));
-        //let getDatenUser: List = {site: "getDatenProfil", username: sessionStorage.getItem("profilname")};
         let datenUser: List = await serverAnfrageGet(createUrlQuery(getDatenUser));
-        //let datenUser: List = {text: "texts", username: "Luca" , date: "22"};
        
         let keysVonDaten: (string | number)[] = toKeysVonList(datenUser); // Um mögliche Datenangaben variabel halten zukönnen
         //console.log(keysVonDaten[0]);

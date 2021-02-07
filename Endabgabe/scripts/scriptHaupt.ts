@@ -6,16 +6,6 @@ namespace register {
     interface ServerMsg {
         msg: string;
     }
-    interface Benutzer {
-
-        username: string;
-        vorname: string;
-        nachname: string;
-        follower: string[];
-        beitraglist: Beitrag[];
-        semester: string;
-        passwort: string;
-    }
 
     interface Beitrag {
         text: string;
@@ -29,8 +19,8 @@ namespace register {
         username: string;
     }
 
-    //let serverUrl: string = "http://127.0.0.1:8100";
-    let serverUrl: string = "https://lucamosergis2020.herokuapp.com/";
+    let serverUrl: string = "http://127.0.0.1:8100";
+    //let serverUrl: string = "https://lucamosergis2020.herokuapp.com/";
     let username: string = "Fehler";
 
     async function main(): Promise<void> {
@@ -39,15 +29,15 @@ namespace register {
         let btnAdd: HTMLButtonElement = <HTMLButtonElement>document.getElementById("btnAdd");
         btnAdd.addEventListener("click", addBeitrag);
 
-        let optionSort: HTMLSelectElement = <HTMLSelectElement>document.getElementById("sort");
-        let sortEingabe: string = optionSort.value;
+        //let optionSort: HTMLSelectElement = <HTMLSelectElement>document.getElementById("sort");
+        //let sortEingabe: string = optionSort.value;
 
-        hauptseiteReload(sortEingabe);
+        hauptseiteReload();
 
         
     }
 
-    async function hauptseiteReload(sort: string): Promise<void> {
+    async function hauptseiteReload(): Promise<void> {
 
         let hauptProfilNavi: HTMLLIElement = <HTMLLIElement>document.getElementById("hauptProfil");
         hauptProfilNavi.addEventListener("click", function funcProfil(): void {
@@ -57,7 +47,7 @@ namespace register {
         let divBeitragBox: HTMLDivElement = <HTMLDivElement>document.getElementById("flexcontainer");
         deleteBeitragListe(divBeitragBox);
 
-        createbeitragListe(sort, divBeitragBox , await getBeitrageListe(serverUrl));
+        createbeitragListe(divBeitragBox , await getBeitrageListe(serverUrl));
         console.log("sessionStorage inhalt: " + sessionStorage.getItem("username") + sessionStorage.getItem("profilname"));
     }
 
@@ -80,7 +70,7 @@ namespace register {
         divUsername.appendChild(usernameText);
     }
 
-    function createbeitragListe( sort: string , divBeitragBox: HTMLDivElement, beitragListe: Beitrag[]): void {
+    function createbeitragListe(divBeitragBox: HTMLDivElement, beitragListe: Beitrag[]): void {
         // sortieren
         //let beitragListeSortiert: Beitrag[] = beitragListSortieren(sort, beitragListe);
         let beitragListeSortiert: Beitrag[] = beitragListe;
@@ -210,13 +200,6 @@ namespace register {
         });
     }
 
-
-    function createUrlQuery (msg: List): string {
-
-        let query: URLSearchParams = new URLSearchParams(<any>msg);
-        let serverMitDatenUrl: string = serverUrl + "?" + query.toString();
-        return serverMitDatenUrl;
-    }
 
     async function serverAnfrageGet(_url: RequestInfo): Promise<Beitrag[]> {
         let response: Response = await fetch(_url);

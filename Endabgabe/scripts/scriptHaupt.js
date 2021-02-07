@@ -1,25 +1,25 @@
 "use strict";
 var register;
 (function (register) {
-    //let serverUrl: string = "http://127.0.0.1:8100";
-    let serverUrl = "https://lucamosergis2020.herokuapp.com/";
+    let serverUrl = "http://127.0.0.1:8100";
+    //let serverUrl: string = "https://lucamosergis2020.herokuapp.com/";
     let username = "Fehler";
     async function main() {
         letUsername();
         let btnAdd = document.getElementById("btnAdd");
         btnAdd.addEventListener("click", addBeitrag);
-        let optionSort = document.getElementById("sort");
-        let sortEingabe = optionSort.value;
-        hauptseiteReload(sortEingabe);
+        //let optionSort: HTMLSelectElement = <HTMLSelectElement>document.getElementById("sort");
+        //let sortEingabe: string = optionSort.value;
+        hauptseiteReload();
     }
-    async function hauptseiteReload(sort) {
+    async function hauptseiteReload() {
         let hauptProfilNavi = document.getElementById("hauptProfil");
         hauptProfilNavi.addEventListener("click", function funcProfil() {
             sessionStorage.setItem("profilname", sessionStorage.getItem("username"));
         });
         let divBeitragBox = document.getElementById("flexcontainer");
         deleteBeitragListe(divBeitragBox);
-        createbeitragListe(sort, divBeitragBox, await getBeitrageListe(serverUrl));
+        createbeitragListe(divBeitragBox, await getBeitrageListe(serverUrl));
         console.log("sessionStorage inhalt: " + sessionStorage.getItem("username") + sessionStorage.getItem("profilname"));
     }
     function letUsername() {
@@ -39,7 +39,7 @@ var register;
         }
         divUsername.appendChild(usernameText);
     }
-    function createbeitragListe(sort, divBeitragBox, beitragListe) {
+    function createbeitragListe(divBeitragBox, beitragListe) {
         // sortieren
         //let beitragListeSortiert: Beitrag[] = beitragListSortieren(sort, beitragListe);
         let beitragListeSortiert = beitragListe;
@@ -146,11 +146,6 @@ var register;
                 textFeld.placeholder = "Es muss was eingetragen werden"; //ändern zu:  es muss was eingetragen werden
             }
         });
-    }
-    function createUrlQuery(msg) {
-        let query = new URLSearchParams(msg);
-        let serverMitDatenUrl = serverUrl + "?" + query.toString();
-        return serverMitDatenUrl;
     }
     async function serverAnfrageGet(_url) {
         let response = await fetch(_url);

@@ -11,8 +11,8 @@ var server_script;
     if (!port) {
         port = 8100; // Falls kein Port angegeben ist 8100 benutzen    5500       
     }
-    //let databaseUrl: string = "mongodb://localhost:27017";
-    let databaseUrl = "mongodb+srv://Testuser:test@luca.bhhsd.mongodb.net/datenbank?retryWrites=true&w=majority";
+    let databaseUrl = "mongodb://localhost:27017";
+    //let databaseUrl: string = "mongodb+srv://Testuser:test@luca.bhhsd.mongodb.net/datenbank?retryWrites=true&w=majority";
     startServer(port); // Verbinden
     connectToDatabase(databaseUrl);
     async function connectToDatabase(_url) {
@@ -166,7 +166,6 @@ var server_script;
         return usernameList;
     }
     async function getFollowedUsernameList(username) {
-        console.log("hier: " + username);
         let followedList = [];
         let user = await eingabe.find({ username: username }).toArray();
         if (user[0].follower != null || user[0].follower != undefined) {
@@ -197,9 +196,6 @@ var server_script;
         return beitraglist;
     }
     function insertBeitrag(b, name) {
-        // let user: Benutzer = coll.find({username: name});
-        // user.beitragelist.push(b);
-        // coll.updateOne({username: name}, user);
         try {
             eingabe.updateOne({ username: name }, {
                 $push: {
@@ -348,14 +344,11 @@ var server_script;
         let datenRichtig = false;
         for (let i = 0; i < userDaten.length; i++) {
             let usernameString = "\"" + anfrageList.username + "\"";
-            //let emailString: string = email;
-            // console.log(JSON.stringify(userDaten[i].email).toString() + " == " + usernameString); // "mmlpv.mossder@gmx.de" == mmlpv.mossder@gmx.de !!!FALSCH rumtesten
-            if (JSON.stringify(userDaten[i].username) == usernameString) { // benutzerArr[i].email.toString() kann undefined sein ... muss gelöst werden durch vollständige Formular ausfüllung  
-                console.log("jaaa ist gleich" + i);
-                //let passwordString: string = "\"" + password + "\"";
+            if (JSON.stringify(userDaten[i].username) == usernameString) {
+                console.log("username ist vorhanden" + i);
                 let passwordString = "" + anfrageList.password;
                 if (userDaten[i].password == passwordString) { // undefined führt zu problemen
-                    console.log("password ist gleich");
+                    console.log("passwort ist richtig");
                     datenRichtig = true;
                     return datenRichtig;
                 }
@@ -369,9 +362,7 @@ var server_script;
         let datenVorhanden = false;
         for (let i = 0; i < userDaten.length; i++) {
             let usernameString = "\"" + anfrageList.username + "\"";
-            //let emailString: string = email;
-            //console.log(JSON.stringify(userDaten[i].email).toString() + " == " + usernameString); // "mmlpv.mossder@gmx.de" == mmlpv.mossder@gmx.de !!!FALSCH rumtesten
-            if (JSON.stringify(userDaten[i].username) == usernameString) { // benutzerArr[i].email.toString() kann undefined sein ... muss gelöst werden durch vollständige Formular ausfüllung  
+            if (JSON.stringify(userDaten[i].username) == usernameString) {
                 datenVorhanden = true;
                 return datenVorhanden;
             }
@@ -382,10 +373,10 @@ var server_script;
         eingabe.insertOne(_eingabe);
     }
     // anstatt beitrag: string muss beitrag:Daten
-    async function retrieveDatenBenutzer() {
-        let datenArr = await eingabe.find().toArray();
+    /*async function retrieveDatenBenutzer(): Promise<Benutzer[]> {
+        let datenArr: Benutzer[] = await eingabe.find().toArray();
         return datenArr;
-    }
+    }*/
     async function retrieveDaten() {
         let datenArr = await eingabe.find().toArray();
         return datenArr;

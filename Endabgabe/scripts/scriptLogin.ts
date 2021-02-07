@@ -11,8 +11,8 @@ namespace login {
     }
 
 
-    //let serverUrl: string = "http://localhost:8100/";
-    let serverUrl: string = "https://lucamosergis2020.herokuapp.com/";
+    let serverUrl: string = "http://localhost:8100/";
+    //let serverUrl: string = "https://lucamosergis2020.herokuapp.com/";
     
 
     function main(): void {

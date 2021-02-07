@@ -7,15 +7,11 @@ namespace register {
         msg: string;
     }
     let username: string = "Fehler";
-    let serverUrl: string = "https://lucamosergis2020.herokuapp.com/";
-    //let serverUrl: string = "http://127.0.0.1:8100";
+    //let serverUrl: string = "https://lucamosergis2020.herokuapp.com/";
+    let serverUrl: string = "http://127.0.0.1:8100";
 
     function main(): void {
-        //1. Seite laden mit allen Usern + btn hinzufügen zum FOlgen und entfolgen
-        //2. Nur alle die man folgt oben rechts
-        //3. Alle die einen FOlgen (Follower) untern rechts
-        //punkt 1 und 2 werden beim folgen und entfolgen neugeformt (gelöscht und wieder hinzugefügt)
-
+        
         letUsername();
         let divAllUserList: HTMLDivElement = <HTMLDivElement>document.getElementById("allUserList");
         listAllUser(divAllUserList);
@@ -25,6 +21,10 @@ namespace register {
             sessionStorage.setItem("profilname" , sessionStorage.getItem("username"));
         });
         /* später
+        //1. Seite laden mit allen Usern + btn hinzufügen zum FOlgen und entfolgen
+        //2. Nur alle die man folgt oben rechts
+        //3. Alle die einen FOlgen (Follower) untern rechts
+        //punkt 1 und 2 werden beim folgen und entfolgen neugeformt (gelöscht und wieder hinzugefügt)
         let divFollowedUserList: HTMLDivElement = <HTMLDivElement>document.getElementById("allFollowedList");
         let divFollowersList: HTMLDivElement = <HTMLDivElement>document.getElementById("allFollowersList");
         */
@@ -103,11 +103,9 @@ namespace register {
                     
                     let userAdded: boolean = await addUserFromFollowedList("" + allUsernameList[i].username, sessionStorage.getItem("username"));
                     if (userAdded) {
-                        // Nachricht, dass der Username erfolgreich gefolgt wurde
                         console.log("wurde gefolgt");
                         main();
                     } else {
-                        // Fehlernachricht, dass es nicht geklappt hat den User hinzuzufügen
                         console.log("wurde nicht gefolgt");
                     }
                    

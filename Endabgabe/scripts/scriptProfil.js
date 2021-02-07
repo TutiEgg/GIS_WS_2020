@@ -1,8 +1,8 @@
 "use strict";
 var register;
 (function (register) {
-    let serverUrl = "https://lucamosergis2020.herokuapp.com/";
-    //let serverUrl: string = "http://127.0.0.1:8100";
+    //let serverUrl: string = "https://lucamosergis2020.herokuapp.com/";
+    let serverUrl = "http://127.0.0.1:8100";
     let username = "Fehler";
     function main() {
         letUsername();
@@ -41,9 +41,7 @@ var register;
         deleteElements(divParent);
         let getDatenUser = { site: "getDatenProfil", username: sessionStorage.getItem("profilname") };
         console.log(sessionStorage.getItem("profilname"));
-        //let getDatenUser: List = {site: "getDatenProfil", username: sessionStorage.getItem("profilname")};
         let datenUser = await serverAnfrageGet(createUrlQuery(getDatenUser));
-        //let datenUser: List = {text: "texts", username: "Luca" , date: "22"};
         let keysVonDaten = toKeysVonList(datenUser); // Um mögliche Datenangaben variabel halten zukönnen
         //console.log(keysVonDaten[0]);
         for (let i = 0; i < keysVonDaten.length; i++) {

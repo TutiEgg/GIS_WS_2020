@@ -27,19 +27,6 @@ export namespace server_script {
     interface UsernameList {
         username: string; 
     }
-
-    interface getDaten {
-
-        site?: string;
-        username: string;
-        firstname: string;
-        lastname: string;
-        password: string; 
-        studiengang: string;
-        semesterangabe: string;
-        follower: string[];
-        beitraglist: Beitrag[];
-    }
     interface Benutzer {
 
         username: string;
@@ -66,9 +53,9 @@ export namespace server_script {
     if (!port) {
         port = 8100;                                        // Falls kein Port angegeben ist 8100 benutzen    5500       
     }
-    //let databaseUrl: string = "mongodb://localhost:27017";
+    let databaseUrl: string = "mongodb://localhost:27017";
 
-    let databaseUrl: string = "mongodb+srv://Testuser:test@luca.bhhsd.mongodb.net/datenbank?retryWrites=true&w=majority";
+    //let databaseUrl: string = "mongodb+srv://Testuser:test@luca.bhhsd.mongodb.net/datenbank?retryWrites=true&w=majority";
 
     startServer(port);                                      // Verbinden
     connectToDatabase(databaseUrl);
@@ -242,7 +229,6 @@ export namespace server_script {
     }
 
     async function getFollowedUsernameList(username: string): Promise<UsernameList[]> {
-        console.log("hier: " + username);
         let followedList: UsernameList[] = [];
         let user: Benutzer[] = await eingabe.find({username: username}).toArray();
         
@@ -259,7 +245,7 @@ export namespace server_script {
         let beitraglist: Beitrag[] = [];
         let user: Benutzer[] = await eingabe.find({username: name}).toArray();
         
-        if (user[0].follower != null && user[0].follower != undefined ){
+        if (user[0].follower != null && user[0].follower != undefined ) {
             for (let follower of user[0].follower) {
                 let u: Benutzer[] = await eingabe.find({ username: follower }).toArray();
                 if (user[0].beitraglist != null && user[0].beitraglist != undefined ) {
@@ -281,9 +267,6 @@ export namespace server_script {
     }
       
     function insertBeitrag(b: Beitrag, name: string): boolean {
-        // let user: Benutzer = coll.find({username: name});
-        // user.beitragelist.push(b);
-        // coll.updateOne({username: name}, user);
         try {
             eingabe.updateOne({ username: name }, {
                 $push: {
@@ -435,14 +418,12 @@ export namespace server_script {
         let datenRichtig: boolean = false;
         for (let i: number = 0; i < userDaten.length; i++) {
             let usernameString: string = "\"" + anfrageList.username + "\"";
-            //let emailString: string = email;
-           // console.log(JSON.stringify(userDaten[i].email).toString() + " == " + usernameString); // "mmlpv.mossder@gmx.de" == mmlpv.mossder@gmx.de !!!FALSCH rumtesten
-            if (JSON.stringify(userDaten[i].username) == usernameString) { // benutzerArr[i].email.toString() kann undefined sein ... muss gelöst werden durch vollständige Formular ausfüllung  
-                console.log("jaaa ist gleich" + i);
-                //let passwordString: string = "\"" + password + "\"";
+            if (JSON.stringify(userDaten[i].username) == usernameString) { 
+                console.log("username ist vorhanden" + i);
+
                 let passwordString: string = "" + anfrageList.password;
                 if (userDaten[i].password == passwordString) { // undefined führt zu problemen
-                    console.log("password ist gleich");
+                    console.log("passwort ist richtig");
                     datenRichtig = true;
                     return datenRichtig;
                 }
@@ -458,9 +439,7 @@ export namespace server_script {
         let datenVorhanden: boolean = false;
         for (let i: number = 0; i < userDaten.length; i++) {
             let usernameString: string = "\"" + anfrageList.username + "\"";
-            //let emailString: string = email;
-            //console.log(JSON.stringify(userDaten[i].email).toString() + " == " + usernameString); // "mmlpv.mossder@gmx.de" == mmlpv.mossder@gmx.de !!!FALSCH rumtesten
-            if (JSON.stringify(userDaten[i].username) == usernameString) { // benutzerArr[i].email.toString() kann undefined sein ... muss gelöst werden durch vollständige Formular ausfüllung  
+            if (JSON.stringify(userDaten[i].username) == usernameString) { 
                     datenVorhanden = true;
                     return datenVorhanden;
                     
@@ -474,10 +453,10 @@ export namespace server_script {
         eingabe.insertOne(_eingabe);
     }
     // anstatt beitrag: string muss beitrag:Daten
-    async function retrieveDatenBenutzer(): Promise<Benutzer[]> {
+    /*async function retrieveDatenBenutzer(): Promise<Benutzer[]> {
         let datenArr: Benutzer[] = await eingabe.find().toArray();
         return datenArr;
-    }
+    }*/
 
     async function retrieveDaten(): Promise<Daten[]> {
         let datenArr: Daten[] = await eingabe.find().toArray();
