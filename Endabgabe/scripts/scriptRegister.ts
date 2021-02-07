@@ -14,9 +14,9 @@ namespace register {
     interface ServerMsg {
         msg: string;
     }
-    let serverUrl: string = "http://127.0.0.1:8100";
+    //let serverUrl: string = "http://127.0.0.1:8100";
     
-    //let serverUrl: string = "https://lucamosergis2020.herokuapp.com/";
+    let serverUrl: string = "https://lucamosergis2020.herokuapp.com/";
 
     
 

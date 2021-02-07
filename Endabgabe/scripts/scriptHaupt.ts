@@ -19,8 +19,8 @@ namespace register {
         username: string;
     }
 
-    let serverUrl: string = "http://127.0.0.1:8100";
-    //let serverUrl: string = "https://lucamosergis2020.herokuapp.com/";
+    //let serverUrl: string = "http://127.0.0.1:8100";
+    let serverUrl: string = "https://lucamosergis2020.herokuapp.com/";
     let username: string = "Fehler";
 
     async function main(): Promise<void> {

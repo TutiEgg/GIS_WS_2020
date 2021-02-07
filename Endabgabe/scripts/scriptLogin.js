@@ -1,8 +1,8 @@
 "use strict";
 var login;
 (function (login_1) {
-    let serverUrl = "http://localhost:8100/";
-    //let serverUrl: string = "https://lucamosergis2020.herokuapp.com/";
+    //let serverUrl: string = "http://localhost:8100/";
+    let serverUrl = "https://lucamosergis2020.herokuapp.com/";
     function main() {
         let buttonLogin = document.getElementById("loginButton");
         buttonLogin.addEventListener("click", function funcLogin() {

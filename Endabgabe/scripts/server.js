@@ -11,8 +11,8 @@ var server_script;
     if (!port) {
         port = 8100; // Falls kein Port angegeben ist 8100 benutzen    5500       
     }
-    let databaseUrl = "mongodb://localhost:27017";
-    //let databaseUrl: string = "mongodb+srv://Testuser:test@luca.bhhsd.mongodb.net/datenbank?retryWrites=true&w=majority";
+    //let databaseUrl: string = "mongodb://localhost:27017";
+    let databaseUrl = "mongodb+srv://Testuser:test@luca.bhhsd.mongodb.net/datenbank?retryWrites=true&w=majority";
     startServer(port); // Verbinden
     connectToDatabase(databaseUrl);
     async function connectToDatabase(_url) {

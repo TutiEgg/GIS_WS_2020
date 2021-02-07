@@ -7,8 +7,8 @@ namespace register {
         msg: string;
     }
     let username: string = "Fehler";
-    //let serverUrl: string = "https://lucamosergis2020.herokuapp.com/";
-    let serverUrl: string = "http://127.0.0.1:8100";
+    let serverUrl: string = "https://lucamosergis2020.herokuapp.com/";
+    //let serverUrl: string = "http://127.0.0.1:8100";
 
     function main(): void {
         

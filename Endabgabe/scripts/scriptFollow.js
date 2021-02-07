@@ -2,8 +2,8 @@
 var register;
 (function (register) {
     let username = "Fehler";
-    //let serverUrl: string = "https://lucamosergis2020.herokuapp.com/";
-    let serverUrl = "http://127.0.0.1:8100";
+    let serverUrl = "https://lucamosergis2020.herokuapp.com/";
+    //let serverUrl: string = "http://127.0.0.1:8100";
     function main() {
         letUsername();
         let divAllUserList = document.getElementById("allUserList");
