@@ -1,0 +1,78 @@
+<!DOCTYPE	html>	
+<html lang="de">
+<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="../CSS/Style.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<script src="../scripts/scriptHaupt.js" defer></script>
+		<title>Meine Kontaktdaten</title>
+</head>
+<body>
+	<ul>
+		<li onclick="window.location.href = '../index.html';">Login</li>
+		<li onclick="window.location.href = '';">Haupt</li>
+		<li onclick="window.location.href = 'Follow/index.html';">Follower</li>
+		<li id="hauptProfil" onclick="window.location.href = 'Profil/index.html';">Profil</li>
+	</ul>	
+<div class="screen">
+	
+	<div class="headline"><h1>Hauptseite</h1></div>
+	<div id="divUsername" class="underline"></div>
+
+	<p></p>
+	<p></p>
+
+		<div class="grid-container">
+			
+			<div class="gridmain">
+
+                <div id="flexcontainer"class="flexcontainer">
+                    <div>ier easd awe sdaw sdasdawsdasd as dasd was daw ds dawd sdasd awd sdasdasd sd <span id="beitrag1">Luca am 12.12.2</span></div>
+                    <div>1<span onclick="">Luca am 12.12.2</span></div>
+                    <div>1<span onclick="clickProfil()">Luca am 12.12.2</span></div>
+                    <div>1<span onclick="clickProfil()">Luca am 12.12.2</span></div>
+                    <div>1<span onclick="clickProfil()">Luca am 12.12.2</span></div>
+
+				</div>
+				<div id="myModal" class="modal">
+					<!-- Modal content -->
+					<div class="modal-content">
+					  <div class="modal-header">
+						<span class="close" id="closeModal">&times;</span>
+						<h2>Beitrag hinzufügen</h2>
+						<h3 id="hauptEintragError"></h3>
+					  </div>
+					  <div class="modal-body">
+						<textarea id="textFeld" name="text" cols="35" rows="6" placeholder="Schreibe deinen Beitrag" maxlength=100></textarea> 	
+					  </div>
+					  <div class="modal-footer">
+						<button style="font-size:30px; border-radius: 10px" id="btnBeitragSend"><i class="material-icons">absenden</i></button>
+					  </div>
+					</div>
+				  
+				</div>
+				<span >
+					<button id="btnAdd" class="buttonnAdd"><i class="material-icons">add_box</i></button>
+				</span>
+			</div> 
+			
+			<div class="gridleft">
+                <input name="search" type="text" id="search" placeholder="search ...">
+			</div> 
+		
+			<div class="gridright">
+				<select name="sort" id="sort">
+					<option value="datumNeu">Datum Neu-Alt</option>
+					<option value="datumAlt">Datum Alt-Neu</option>
+                    <option value="benutzerVorne">Benutzer a-z</option>
+                    <option value="benutzerHinten">Benutzer z-a</option>
+                    <option value="shuffel">Shuffel</option>
+				</select>
+			</div>
+		</div>
+	
+</div>	
+</body>
+</html>
+

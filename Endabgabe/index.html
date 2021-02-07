@@ -1,0 +1,48 @@
+<!DOCTYPE	html>	
+<html lang="de">
+<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="CSS/Style.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<script src="scripts/scriptLogin.js" defer></script>
+		<title>Login</title>
+</head>
+<body>
+
+<div class="screen">
+	
+	<div class="headline"><h1>Login</h1></div>
+	<div id="divUsername" class="underline">Einlogdaten</div>
+
+	<p></p>
+	<p></p>
+
+	
+		<div class="grid-container">
+			
+			<div class="gridmain">
+				<input name="username" type="text" placeholder="Username" id="loginUsername">
+				<input name="password" type="text" placeholder="Passwort" id="loginPassword"><br>
+				<div id="messageLogin">
+
+                </div>
+				<p id="message" style="color:red; font-size:16px"><em></em></p> <!--Falls das Passwort falsche sein sollte oder die Email noch nicht in der Datenbank ist -> Rote Warnung anzeigen   Kann weg gemacht werden-->
+			</div> 
+			<div class="gridleft">
+				<button class="btnProfil" type="button" onclick="window.location.href = 'Register/index.html';"> <!--In typescript ändern anstatt inline-->
+					Registrieren
+                </button>
+			</div> 
+		
+			<div class="gridright">
+				<input type="button" id="loginButton" class="btnProfil" value="Absenden">
+			</div>
+		</div>
+	
+	
+	
+</div>	
+</body>
+</html>
+

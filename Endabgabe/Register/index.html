@@ -1,0 +1,53 @@
+<!DOCTYPE	html>	
+<html lang="de">
+<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="../CSS/Style.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<script src="../scripts/scriptRegister.js" defer></script>
+		<title>Meine Kontaktdaten</title>
+</head>
+<body>
+	
+<div class="screen">
+	
+	<div class="headline"><h1>Register</h1></div>
+	<div id="divUsername" class="underline">Registrieren</div>
+
+	<p></p>
+	<p></p>
+
+	
+		<div class="grid-container">
+			
+			<div class="gridmain">
+				<input name="firstname" type="text" id="regFirstName" placeholder="Vorname">
+				<input name="lastname" type="text" placeholder="Nachname" id="regLastName">
+				<input name="email" type="text" placeholder="Username*" id="regBenutzer">
+				<input name="password" type="text" placeholder="Passwort*" id="regPassword">
+				<input name="Studiengang" type="text" placeholder="Studiengang" id="regStudiengang">
+				<input name="Semesterangabe" type="text" placeholder="Semesterangabe" id="regSemesterangabe">
+				<br>
+				
+				<div id="messageRegister">
+
+				</div>
+				<p id="message" style="color:rgb(83, 1, 1); font-size:26px"><em>Bitte Daten ausfüllen die mit einem <strong>*</strong> markiert sind!</em></p> <!--Falls nicht alle Kästchen ausgefüllt werden oder Benutzer schon in DB -> Rote Warnung anzeigen-->
+			</div> 
+			<div class="gridleft">
+				<button class="btnProfil" type="button" onclick="window.location.href = '../index.html';"> <!--In typescript ändern anstatt inline-->
+					Anmelden
+				</button>
+			</div> 
+		
+			<div class="gridright">
+				<input type="button" id="registerButton" class="btnProfil" value="Absenden">
+			</div>
+		</div>
+
+	
+</div>	
+</body>
+</html>
+
