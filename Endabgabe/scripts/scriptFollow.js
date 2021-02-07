@@ -12,6 +12,10 @@ var register;
         letUsername();
         let divAllUserList = document.getElementById("allUserList");
         listAllUser(divAllUserList);
+        let hauptProfilNavi = document.getElementById("hauptProfil");
+        hauptProfilNavi.addEventListener("click", function funcProfil() {
+            sessionStorage.setItem("profilname", sessionStorage.getItem("username"));
+        });
         /* später
         let divFollowedUserList: HTMLDivElement = <HTMLDivElement>document.getElementById("allFollowedList");
         let divFollowersList: HTMLDivElement = <HTMLDivElement>document.getElementById("allFollowersList");

@@ -20,6 +20,10 @@ namespace register {
         let divAllUserList: HTMLDivElement = <HTMLDivElement>document.getElementById("allUserList");
         listAllUser(divAllUserList);
         
+        let hauptProfilNavi: HTMLLIElement = <HTMLLIElement>document.getElementById("hauptProfil");
+        hauptProfilNavi.addEventListener("click", function funcProfil(): void {
+            sessionStorage.setItem("profilname" , sessionStorage.getItem("username"));
+        });
         /* später
         let divFollowedUserList: HTMLDivElement = <HTMLDivElement>document.getElementById("allFollowedList");
         let divFollowersList: HTMLDivElement = <HTMLDivElement>document.getElementById("allFollowersList");

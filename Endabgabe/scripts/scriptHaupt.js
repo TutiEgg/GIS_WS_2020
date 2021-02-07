@@ -8,13 +8,18 @@ var register;
         letUsername();
         let btnAdd = document.getElementById("btnAdd");
         btnAdd.addEventListener("click", addBeitrag);
+        let optionSort = document.getElementById("sort");
+        let sortEingabe = optionSort.value;
+        hauptseiteReload(sortEingabe);
+    }
+    async function hauptseiteReload(sort) {
         let hauptProfilNavi = document.getElementById("hauptProfil");
         hauptProfilNavi.addEventListener("click", function funcProfil() {
             sessionStorage.setItem("profilname", sessionStorage.getItem("username"));
         });
         let divBeitragBox = document.getElementById("flexcontainer");
         deleteBeitragListe(divBeitragBox);
-        createbeitragListe(divBeitragBox, await getBeitrageListe(serverUrl));
+        createbeitragListe(sort, divBeitragBox, await getBeitrageListe(serverUrl));
         console.log("sessionStorage inhalt: " + sessionStorage.getItem("username") + sessionStorage.getItem("profilname"));
     }
     function letUsername() {
@@ -34,24 +39,55 @@ var register;
         }
         divUsername.appendChild(usernameText);
     }
-    function createbeitragListe(divBeitragBox, beitragListe) {
-        for (let i = 0; i < beitragListe.length; i++) {
+    function createbeitragListe(sort, divBeitragBox, beitragListe) {
+        // sortieren
+        //let beitragListeSortiert: Beitrag[] = beitragListSortieren(sort, beitragListe);
+        let beitragListeSortiert = beitragListe;
+        for (let i = 0; i < beitragListeSortiert.length; i++) {
             let divBeitragText = document.createElement("div");
             divBeitragText.id = "beitrag" + i;
             let spanBeitragDate = document.createElement("span");
-            divBeitragText.appendChild(document.createTextNode("" + beitragListe[i].text));
+            divBeitragText.appendChild(document.createTextNode("" + beitragListeSortiert[i].text));
             divBeitragText.appendChild(spanBeitragDate);
-            spanBeitragDate.appendChild(document.createTextNode(beitragListe[i].username + " am " + beitragListe[i].date));
+            spanBeitragDate.appendChild(document.createTextNode(beitragListeSortiert[i].username + " am " + beitragListeSortiert[i].date));
             spanBeitragDate.addEventListener("click", function funcBeitrag() {
                 sessionStorage.removeItem("profilname");
-                sessionStorage.setItem("profilname", "" + beitragListe[i].username);
+                sessionStorage.setItem("profilname", "" + beitragListeSortiert[i].username);
                 window.location.href = window.location.pathname.substring(0, window.location.pathname.length - 11) + "/Profil/index.html";
                 //window.document.location.href = "/profil/index.html"; 
-                console.log("Beitrag name Klick: " + beitragListe[i].username);
+                console.log("Beitrag name Klick: " + beitragListeSortiert[i].username);
             });
             divBeitragBox.appendChild(divBeitragText);
         }
     }
+    /*
+    function beitragListSortieren( sort: string, beitragListe: Beitrag[]): Beitrag[] {
+
+        let antwort: Beitrag[] = beitragListe.sort();
+        return antwort;
+
+        switch (sort) {
+            case "datumNeu": {
+
+                break;
+            }case "datumAlt": {
+                break;
+            }case "benutzerVorne": {
+                break;
+            }case "benutzerHinten": {
+                break;
+            }case "shuffel": {
+                break;
+            } default : {
+                return beitragListe;
+            }
+        }
+
+    }
+
+    function sortieren(bl: Beitrag[], highPrio: string, lowPrio: string): Beitrag[] {
+
+    }*/
     function deleteBeitragListe(divParent) {
         if (divParent.hasChildNodes()) {
             while (divParent.firstChild) {
@@ -98,7 +134,8 @@ var register;
                     textFeld.placeholder = "";
                     modal.style.display = "none";
                     textFeld.value = "";
-                    main();
+                    btnSend.removeEventListener("click", sendBeitrag);
+                    hauptseiteReload();
                 }
                 else {
                     //

@@ -19,7 +19,8 @@ var server_script;
         let options = { useNewUrlParser: true, useUnifiedTopology: true };
         let mongoClient = new Mongo.MongoClient(_url, options);
         await mongoClient.connect();
-        eingabe = mongoClient.db("datenbank").collection("User");
+        eingabe = mongoClient.db("datenbank").collection("User"); // server
+        // eingabe = mongoClient.db("datenbank").collection("Benutzer"); // lokal
         console.log("Datenbank Verbindung hergestellt ", eingabe != undefined);
     }
     function startServer(_port) {
